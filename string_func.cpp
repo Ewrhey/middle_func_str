@@ -33,7 +33,7 @@ if (s1[i1] == s2[i2]){
 i1++;
 i2++;
 }
-return n = itc_len(s1);
+return n == itc_len(s1);
 }
 
 int itc_countWords(string str){
