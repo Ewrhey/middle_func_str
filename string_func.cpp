@@ -1,8 +1,5 @@
 #include "middle_str.h"
 
-bool itc_isDigit(unsigned char c){
-    return (c >= '0' && c <= '9');
-}
 
 unsigned char itc_toUpper(unsigned char c){
 if (c >= 'a' && c <= 'z'){
