@@ -1,27 +1,6 @@
 #include "middle_str.h"
 
 
-int itc_countWords(string str){
-
-}
-
-
-
-
-
-char itc_sameChar(string str){
-char itog;
-for (int i = 0; str[i] != '\0'; i++){
-    for (int i1 = i + 1; str[i1] != '\0'; i1++){
-                if (str[i1] == str[i]){
-                    return str[i1];
-                }
-    }
-}
-return '0';
-}
-
-
 //abcdefghijklmnopqrstuvwxyz
 string itc_Cezar(string str, int k){
 string alf = "abcdefghijklmnopqrstuvwxyz";
