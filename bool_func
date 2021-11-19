@@ -2,3 +2,20 @@
 bool itc_isDigit(unsigned char c){
     return (c >= '0' && c <= '9');
 }
+
+
+
+bool itc_compare(string s1, string s2){
+if (itc_len(s1) != itc_len(s2)){
+    return false;
+}
+long long i1 = 0, i2 = 0, n = 0;
+while (s1[i1] != '\0' && s2[i2] != '\0'){
+if (s1[i1] == s2[i2]){
+    n++;
+}
+i1++;
+i2++;
+}
+return n == itc_len(s1);
+}
