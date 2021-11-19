@@ -21,28 +21,12 @@ else if (c >= 'A' && c <= 'Z'){
 return c;
 }
 
-bool itc_compare(string s1, string s2){
-if (itc_len(s1) != itc_len(s2)){
-    return false;
-}
-long long i1 = 0, i2 = 0, n = 0;
-while (s1[i1] != '\0' && s2[i2] != '\0'){
-if (s1[i1] == s2[i2]){
-    n++;
-}
-i1++;
-i2++;
-}
-return n == itc_len(s1);
-}
-
 int itc_countWords(string str){
 
-
-
-
-
 }
+
+
+
 
 
 char itc_sameChar(string str){
@@ -56,12 +40,7 @@ for (int i = 0; str[i] != '\0'; i++){
 }
 return '0';
 }
-bool itc_isFirstInSecond(string s1, string s2){
-if (itc_find_str(s2, s1) != -1){
-    return true;
-}
-return false;
-}
+
 
 //abcdefghijklmnopqrstuvwxyz
 string itc_Cezar(string str, int k){
