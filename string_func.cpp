@@ -1,26 +1,6 @@
 #include "middle_str.h"
 
 
-unsigned char itc_toUpper(unsigned char c){
-if (c >= 'a' && c <= 'z'){
-    return itc_changeCase(c);
-}
-return c;
-}
-
-unsigned char itc_changeCase(unsigned char c){
-if (c >= 'a' && c <= 'z'){
-    c = c - 32;
-    return c;
-}
-else if (c >= 'A' && c <= 'Z'){
-    c = c + 32;
-    return c;
-}
-
-return c;
-}
-
 int itc_countWords(string str){
 
 }
