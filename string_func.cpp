@@ -112,20 +112,21 @@ return str;
 
 
 string itc_maxCharWord(string str){
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    bool test = true;
+    long long len = 0, cnt = 0, max_len = 0;
+    if (str == "")
+        return "error";
+    for (long long i = 0; str[i] != '\0'; i++){
+        if (('a' <= str[i] && str[i] <= 'z') || ('A' <= str[i] && str[i] <= 'Z')){
+            len++;
+        }
+        else{
+           if (max_len < len)
+            len = 0; 
+        }
+    }
+    if (len > 0){cnt++;}
+    return cnt;
 }
 
 
