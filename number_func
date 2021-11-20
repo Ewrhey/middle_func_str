@@ -1,4 +1,5 @@
-#include"headr.h"
+
+#include "middle_str.h"
 int itc_countWords(string str)
 { 
 	 bool test = true;
