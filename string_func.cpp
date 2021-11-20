@@ -112,21 +112,24 @@ return str;
 
 
 string itc_maxCharWord(string str){
-    bool test = true;
-    long long len = 0, cnt = 0, max_len = 0;
-    if (str == "")
-        return "error";
+    long long len = 0, max_len = 0;
+    string max_word = "", itog = "";
+    if (str == "" || itc_find_str(str, " ") == -1){return "error";}
     for (long long i = 0; str[i] != '\0'; i++){
         if (('a' <= str[i] && str[i] <= 'z') || ('A' <= str[i] && str[i] <= 'Z')){
             len++;
+            max_word = max_word + str[i];
         }
         else{
-           if (max_len < len)
-            len = 0; 
+           if (max_len < len){max_len = len; itog = max_word;}
+           len = 0; 
+		      max_word = "";
         }
     }
-    if (len > 0){cnt++;}
-    return cnt;
+
+    if (max_len < len){itog = max_word;}
+
+    return itog;
 }
 
 
