@@ -27,42 +27,20 @@ return true;
 }
 
 bool itc_isIp(string str){
-int i = 0, f;
-long long num;
-string sup = "";
-if (itc_len)
-while (itc_isFirstInSecond(".", str)){
-        //                                                                                                    cout << "\n"<<endl;
-    f = itc_find_str(str, ".");
-    //                                                                                                    cout << f << endl;
-    if (f > 1){sup = itc_slice_str(str, 0, f - 1);}
-    else if (f == 1) {sup = +str[0];}
-    //                                                                                                    cout << sup << endl;
-    //                                                                                                    cout << "len = " << itc_len(sup) << endl;
-    //                                                                                                    cout << "max_char = " << itc_max_char_on_end(sup) << endl;
-    if (sup_3raz_number(sup)){
-        //                                                                                                    cout << "in if ______" << endl;
-        if (sup != "0"){num = string_number(sup);}
-        else if( sup == "0"){num = 0;}
-        //                                                                                                    cout << num << endl;
-        if (num >= 0 && num <= 255){
-            i++;
-        }
+unsigned int i = 0;
+while (str[i] != '\0'){
+    if((str[i] > '9' || str[i] < '0') && str[i] != '.'  )
+        return false;
+    i++;
     }
-    str = itc_slice_str(str, f + 1, itc_len(str));
-    //                                                                                                    cout << "str" << str << endl;
+if (itc_len(str) > 15 || itc_count_char_in_str('.',str) != 3 || itc_max_char_on_end(str) > 3)
+    return false;
+while (itc_len(str) > 3){
+if(string_number(itc_slice_str(str, 0, itc_find_str(str, ".") - 1)) > 255)
+    return false;
+str = itc_slice_str(str, itc_find_str(str, ".") + 1, itc_len(str) - 1);
 }
-if (sup_3raz_number(str)){
-        //                                                                                                    cout << "in if ______" << endl;
-    if (str != "0"){num = string_number(str);}
-    else if( str == "0"){num = 0;}
-        //                                                                                                    cout << num << endl;
-    if (num >= 0 && num <= 255){
-        i++;
-    }
-}
-if (i == 4){
-    return true;
-}
-return false;
+if(string_number(str) > 255)
+    return false;
+return true;
 }
