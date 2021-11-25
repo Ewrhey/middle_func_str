@@ -21,10 +21,9 @@ return n == itc_len(s1);
 }
 
 bool itc_isFirstInSecond(string s1, string s2){
-if (itc_find_str(s2, s1) != -1){
-    return true;
-}
-return false;
+if (itc_find_str(s2, s1) == -1)
+    return false;
+return true;
 }
 
 bool itc_isIp(string str){
